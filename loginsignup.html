@@ -1,116 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>School Finder</title>
-    <link rel="stylesheet" href="../css/login.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Arvo"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="navBar">
-          <ul>
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#">Sign Out</a></li>
-          </ul>
-        </div>
-      </nav>
 
-      <div class="top">
-        <h1 id="topHeading">Welcome To The Land of Schools</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Finder</title>
+  <link rel="stylesheet" href="./css/login.css" />
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="navBar">
+        <ul>
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#" id="signoutbtn">Sign Out</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="top">
+      <h1 id="topHeading">Welcome To The Land of Schools</h1>
+    </div>
+
+    <div class="container" id="container">
+      <!-- Sign up form -->
+      <div class="form-container signup-container">
+        <div class="form_conta">
+          <h1>Create Account</h1>
+          <span>Enter Your Details To signUp</span>
+          <input type="text" id="name" placeholder="Enter Your Name" />
+          <input type="email" id="signupemail" placeholder="abc@gmail.com" />
+          <input type="password" id="password" placeholder="Enter Strong Password" />
+          <label for="roles">You are</label>
+          <select name="roles" id="role_" value="User">
+            <option value="U-7865">User</option>
+            <option value="SA-7878">SchoolAdmin</option>
+          </select>
+          <button id="btnSignUp">Sign up</button>
+        </div>
       </div>
 
-      <div class="container" id="container">
-        <!-- Sign up form -->
-        <div class="form-container signup-container">
-          <form action="#">
-            <h1>Create Account</h1>
-            <span>Enter Your Details To signUp</span>
-            <input type="text" id="name" placeholder="Enter Your Name" />
-            <input type="email" id="signupemail" placeholder="abc@gmail.com" />
-            <input
-              type="password"
-              id="password"
-              placeholder="Enter Strong Password"
-            />
-            <select>
-              <option value="1003" >User</option>
-              <option value="1006" >SchoolAdmin</option>
-            </select>
-            <button id="btnSignUp" >Sign up</button>
-          </form> 
+      <!-- Signin form -->
+      <div class="form-container signin-container">
+        <div class="form_conta">
+          <h1>Sign In</h1>
+          <input type="email" placeholder="Enter Registered Email" name="" id="email" />
+          <input type="password" placeholder="Enter Password" name="" id="pass" />
+          <a href="#">Forgot Password</a>
+          <button id="btnLogIn">Sign In</button>
         </div>
+      </div>
 
-        <!-- Signin form -->
-        <div class="form-container signin-container">
-          <form action="#">
-            <h1>Sign In</h1>
-            <input
-              type="email"
-              placeholder="Enter Registered Email"
-              name=""
-              id="email"
-            />
-            <input
-              type="password"
-              placeholder="Enter Password"
-              name=""
-              id="pass"
-            />
-            <a href="#">Forgot Password</a>
-            <button id="btnLogIn">Sign In</button>
-          </form>
-        </div>
-
-        <!-- Overlay container -->
-        <div class="overLay-container">
-          <div class="overLay">
-            <div class="overLay-panel overLay-left">
-              <h1>Welcome Back</h1>
-              <p>Keep Connected With us Login here!!</p>
-              <button class="ghost" id="signIn">Sign In</button>
-            </div>
-            <div class="overLay-panel overLay-right">
-              <h1>New Here!</h1>
-              <p>Click To Sign Up</p>
-              <button class="ghost" id="signUp">Sign Up</button>
-            </div>
+      <!-- Overlay container -->
+      <div class="overLay-container">
+        <div class="overLay">
+          <div class="overLay-panel overLay-left">
+            <h1>Welcome Back</h1>
+            <p>Keep Connected With us Login here!!</p>
+            <button class="ghost" id="signIn">Sign In</button>
+          </div>
+          <div class="overLay-panel overLay-right">
+            <h1>New Here!</h1>
+            <p>Click To Sign Up</p>
+            <button class="ghost" id="signUp">Sign Up</button>
           </div>
         </div>
       </div>
-    </header>
-    
-    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase/auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase/database.js"></script>
-    
-    <script>
-      const firebaseConfig = {
-        apiKey: "AIzaSyDQDlbpgOz5USQcUAjVaEfiDrTYezY9ReA",
-        authDomain: "school-finder-2085a.firebaseapp.com",
-        databaseURL: "https://school-finder-2085a-default-rtdb.firebaseio.com",
-        projectId: "school-finder-2085a",
-        storageBucket: "school-finder-2085a.appspot.com",
-        messagingSenderId: "765928501031",
-        appId: "1:765928501031:web:b9fbc13ba22ec10cdc8302",
-      };
-      firebase.initializeApp(firebaseConfig);
-      const auth = getAuth(app);
-      </script>
-      <script src="js/auth.js"></script>
-      <script src="js/signupdb.js"></script>
-   
-  </body>
+    </div>
+  </header>
+  <script type="module" src="js/auth.js"></script>
+</body>
+
 </html>
