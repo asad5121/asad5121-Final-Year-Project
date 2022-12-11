@@ -125,7 +125,7 @@ button.ghost {
 	border-color: red;
 }
 
-form {
+.form_conta {
 	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;
